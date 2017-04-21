@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c89afbc5-ccec-4c6e-a97e-70488f70a23f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/Settings/Settings.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/lib/Lib.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/chromedriver.exe" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/Settings/Settings.properties" afterPath="$PROJECT_DIR$/src/main/resources/Settings.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/tinkoff/OneTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/tinkoff/OneTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/lib/Lib.java" afterPath="$PROJECT_DIR$/src/test/java/lib/Lib.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,8 +36,8 @@
       <file leaf-file-name="OneTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/tinkoff/OneTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="206">
+              <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,8 +48,8 @@
       <file leaf-file-name="Lib.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/lib/Lib.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+            <state relative-caret-position="144">
+              <caret line="43" column="29" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,10 +58,10 @@
         </entry>
       </file>
       <file leaf-file-name="Settings.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Settings/Settings.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/Settings.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="144">
+              <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -92,10 +93,11 @@
         <option value="$PROJECT_DIR$/src/main/java/Test/Test.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/OneTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Settings/Settings.properties" />
         <option value="$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/requests/ClassRequest.class" />
-        <option value="$PROJECT_DIR$/src/test/java/com/tinkoff/OneTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Settings/Settings.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/Settings.properties" />
         <option value="$PROJECT_DIR$/src/test/java/lib/Lib.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/tinkoff/OneTest.java" />
       </list>
     </option>
   </component>
@@ -139,8 +141,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="82" />
-    <option name="y" value="63" />
+    <option name="x" value="66" />
+    <option name="y" value="48" />
     <option name="width" value="1071" />
     <option name="height" value="735" />
   </component>
@@ -205,10 +207,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Settings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -281,6 +279,28 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tinkoff" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tinkoff" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -307,6 +327,12 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Applications\Tinkoff\src\main\resources" />
+      <recent name="C:\Applications\Tinkoff\src\test\java\com\tinkoff" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -683,20 +709,45 @@
       <option name="project" value="LOCAL" />
       <updated>1492776006093</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="в процессе реализации">
+      <created>1492793654109</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1492793654109</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OneTest - 2017.04.21 at 19h 38m 10s.xml">
+    <history-entry file="OneTest - 2017.04.21 at 21h 31m 50s.xml">
       <configuration name="OneTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OneTest - 2017.04.21 at 19h 39m 26s.xml">
+    <history-entry file="OneTest - 2017.04.21 at 21h 31m 56s.xml">
       <configuration name="OneTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OneTest - 2017.04.21 at 19h 41m 30s.xml">
+    <history-entry file="OneTest - 2017.04.21 at 21h 36m 43s.xml">
       <configuration name="OneTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OneTest - 2017.04.21 at 19h 50m 17s.xml">
+    <history-entry file="OneTest - 2017.04.21 at 21h 39m 54s.xml">
+      <configuration name="OneTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OneTest - 2017.04.21 at 21h 41m 52s.xml">
+      <configuration name="OneTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OneTest - 2017.04.21 at 21h 43m 55s.xml">
+      <configuration name="OneTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OneTest - 2017.04.21 at 21h 47m 37s.xml">
+      <configuration name="OneTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OneTest - 2017.04.21 at 21h 48m 53s.xml">
+      <configuration name="OneTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OneTest - 2017.04.21 at 21h 54m 38s.xml">
+      <configuration name="OneTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OneTest - 2017.04.21 at 21h 55m 34s.xml">
       <configuration name="OneTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -710,7 +761,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="82" y="63" width="1071" height="735" extended-state="0" />
+    <frame x="66" y="48" width="1071" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -723,12 +774,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.503428" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20763958" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31527093" sideWeight="0.6219393" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32840723" sideWeight="0.496572" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3908046" sideWeight="0.496572" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29720855" sideWeight="0.5269344" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27130264" sideWeight="0.49078342" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2918707" sideWeight="0.49078342" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24975514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -781,7 +832,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="test1" />
     <MESSAGE value="test2" />
-    <option name="LAST_COMMIT_MESSAGE" value="test2" />
+    <MESSAGE value="в процессе реализации" />
+    <option name="LAST_COMMIT_MESSAGE" value="в процессе реализации" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -911,18 +963,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Settings/Settings.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Settings.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        <state relative-caret-position="144">
+          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/lib/Lib.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+        <state relative-caret-position="144">
+          <caret line="43" column="29" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -931,8 +983,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/tinkoff/OneTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="206">
+          <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
