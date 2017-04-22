@@ -3,6 +3,7 @@ package lib;
 import static org.junit.Assert.fail;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -68,5 +69,18 @@ public class Lib {
         }
     }
 //______________________________________________________________________________________
-
+    /**
+     * Функция проверки присутствия элемента
+     *
+     * @By element - элемент
+     */
+    public static boolean isElementPresent(By element) {
+        try {
+            driver.findElement(element);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+//______________________________________________________________________________________
 }
