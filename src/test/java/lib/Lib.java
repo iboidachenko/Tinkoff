@@ -3,9 +3,11 @@ package lib;
 import static org.junit.Assert.fail;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -81,6 +83,31 @@ public class Lib {
         } catch (NoSuchElementException e) {
             return false;
         }
+    }
+//______________________________________________________________________________________
+    /**
+     * Функция ожидания элемента true/false
+     *
+     * @By element - элемент
+     */
+    public static boolean waitElementTF(By element) {
+        try {
+            //Таймаут ожидания элементов
+            wait = new WebDriverWait(driver, 5);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+//______________________________________________________________________________________
+    /**
+     * Функция нажатия клавиши "Enter"
+     */
+    public static void pressEnter() throws Exception {
+        Actions builder = new Actions(driver);
+        builder.sendKeys(Keys.ENTER).perform();
+        builder.sendKeys(Keys.NULL).perform();
     }
 //______________________________________________________________________________________
 }
