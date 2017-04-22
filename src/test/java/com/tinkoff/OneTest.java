@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 /**
  * Created by iboidachenko on 21.04.17.
@@ -37,14 +38,20 @@ public class OneTest {
 
     @Test
     public void открытиеТестовойСреды() throws Exception {
-        System.out.println("Претензии_Претензии в cервисном запросе_63602");
-
-        System.out.println("Открытие страницы авторизации пользователя");
+        System.out.println("Открытие стартовой страницы");
         Lib.openLoginPage(pathToDriver, url);
+        Lib.waitElement(By.xpath("//span[@class='ui-link__text' and contains (text(), 'Платежи')]"));
 		}
 //_____________________________________________________________________________________
+    @Test
+    public void переходНаПлатежи() throws Exception {
+        System.out.println("Нажатие");
+        Lib.driver.findElement(By.xpath("//span[@class='ui-link__text' and contains (text(), 'Платежи')]")).click();
+        Lib.waitElement(By.xpath("//div[@class='payment-page__header']/h1[contains (text(), 'Платежи')]"));
+        }
+    //_____________________________________________________________________________________
     @AfterClass
         public static void finishTest() throws Exception {
         Lib.logout();
-}
+        }
 }

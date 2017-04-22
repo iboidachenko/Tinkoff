@@ -2,8 +2,10 @@ package lib;
 
 import static org.junit.Assert.fail;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -48,6 +50,21 @@ public class Lib {
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);
+        }
+    }
+//______________________________________________________________________________________
+    /**
+     * Функция ожидания элемента
+     *
+     * @By element - элемент
+     */
+    public static void waitElement(By element) {
+        try {
+            //Таймаут ожидания элементов
+            wait = new WebDriverWait(driver, 120);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+        } catch (Exception e) {
+            fail("Не найден элемент - " +element);
         }
     }
 //______________________________________________________________________________________
