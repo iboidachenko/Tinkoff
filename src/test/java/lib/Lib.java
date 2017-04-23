@@ -110,4 +110,16 @@ public class Lib {
         builder.sendKeys(Keys.NULL).perform();
     }
 //______________________________________________________________________________________
+    /**
+     * Функция проверки объекта на disabled
+     *
+     * @By object - объект
+     */
+    public static void checkObjectIsEnabled(By object) throws Exception {
+        if (isElementPresent (object) == false) {
+        } else {
+            fail("Объект \""+object+"\" enabled");
+        }
+    }
+//______________________________________________________________________________________
 }

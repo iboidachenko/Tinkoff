@@ -30,6 +30,7 @@ public class OneTest {
     //Параметры
     private static String регион;
     private static String искомыйПровайдер;
+    private static String urlШаг5;
 
 
    @BeforeClass
@@ -104,6 +105,7 @@ public class OneTest {
         искомыйПровайдер = Lib.driver.findElement(By.xpath("//span[@class='ui-link__text' and contains (text(), 'ЖКУ-Москва')]")).getText();
         Lib.driver.findElement(By.xpath("//span[@class='ui-link__text' and contains (text(), 'ЖКУ-Москва')]")).click();
         Lib.waitElement(By.xpath("//span[@class='ui-menu-second__title' and contains (text(), 'Оплатить ЖКУ в Москве')]"));
+        urlШаг5 = Lib.driver.getCurrentUrl();
     }
 //_____________________________________________________________________________________
     @Test
@@ -115,7 +117,7 @@ public class OneTest {
 //_____________________________________________________________________________________
     @Test
     public void gпроверкаПолей() throws Exception {
-        System.out.println("Отрицательные проверки полей на валидные значения");
+        System.out.println("Отрицательные проверки полей на НЕвалидные значения");
         System.out.println("Проверка поля \"Код плательщика\"");
         Lib.waitElement(By.xpath("//div[@class='ui-input__column']/input[@name='provider-payerCode']"));
         Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@name='provider-payerCode']")).click();
@@ -141,8 +143,70 @@ public class OneTest {
         Lib.pressEnter();
         assertEquals("Максимальная сумма перевода - 15 000 \u20BD", Lib.driver.findElement(By.xpath("//div[@class='ui-form__row ui-form__row_amount ui-form__row_default-error-view-visible']/descendant::div[contains(@class, 'ui-form-field-error-message_ui-form')]")).getText());
 
+        System.out.println("Положительные проверки полей на валидные значения");
+        System.out.println("Проверка поля \"Код плательщика\"");
+        Lib.waitElement(By.xpath("//div[@class='ui-input__column']/input[@name='provider-payerCode']"));
+        Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@name='provider-payerCode']")).click();
+        Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@name='provider-payerCode']")).clear();
+        Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@name='provider-payerCode']")).sendKeys("1234567890");
+        Lib.pressEnter();
+        Lib.checkObjectIsEnabled(By.xpath("//div[contains(@class, 'ui-form__row_text')]/descendant::div[contains(@class, 'ui-form-field-error-message_ui-form')]"));
+
+        System.out.println("Проверка поля \"Период\"");
+        Lib.waitElement(By.xpath("//div[@class='ui-input__column']/input[@name='provider-period']"));
+        Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@name='provider-period']")).click();
+        Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@name='provider-period']")).clear();
+        Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@name='provider-period']")).sendKeys("01.2017");
+        Lib.pressEnter();
+        Lib.checkObjectIsEnabled(By.xpath("//div[contains(@class, 'ui-form__row_date')]/descendant::div[contains(@class, 'ui-form-field-error-message_ui-form')]"));
+
+        System.out.println("Проверка поля \"Сумма страхования\"");
+        Lib.waitElement(By.xpath("//div[@class='ui-form__row ui-form__row_amount']/descendant::input[contains(@class, 'ui-input__field')]"));
+        Lib.driver.findElement(By.xpath("//div[@class='ui-form__row ui-form__row_amount']/descendant::input[contains(@class, 'ui-input__field')]")).click();
+        Lib.driver.findElement(By.xpath("//div[@class='ui-form__row ui-form__row_amount']/descendant::input[contains(@class, 'ui-input__field')]")).clear();
+        Lib.driver.findElement(By.xpath("//div[@class='ui-form__row ui-form__row_amount']/descendant::input[contains(@class, 'ui-input__field')]")).sendKeys("150");
+        Lib.pressEnter();
+
+        System.out.println("Проверка поля \"Сумма\"");
+        Lib.waitElement(By.xpath("//div[@class='ui-form__row ui-form__row_amount ui-form__row_default-error-view-visible']/descendant::input[contains(@class, 'ui-input__field')]"));
+        Lib.driver.findElement(By.xpath("//div[@class='ui-form__row ui-form__row_amount ui-form__row_default-error-view-visible']/descendant::input[contains(@class, 'ui-input__field')]")).click();
+        Lib.driver.findElement(By.xpath("//div[@class='ui-form__row ui-form__row_amount ui-form__row_default-error-view-visible']/descendant::input[contains(@class, 'ui-input__field')]")).clear();
+        Lib.driver.findElement(By.xpath("//div[@class='ui-form__row ui-form__row_amount ui-form__row_default-error-view-visible']/descendant::input[contains(@class, 'ui-input__field')]")).sendKeys("11000");
+        Lib.pressEnter();
+        Lib.checkObjectIsEnabled(By.xpath("//div[@class='ui-form__row ui-form__row_amount ui-form__row_default-error-view-visible']/descendant::div[contains(@class, 'ui-form-field-error-message_ui-form')]"));
     }
-    //_____________________________________________________________________________________
+//_____________________________________________________________________________________
+    @Test
+    public void hпереходНаПлатежи() throws Exception {
+        System.out.println("Перейти на вкладку \"Платеж\"");
+        Lib.waitElement(By.xpath("//div[@class='ui-menu-primary__item']/a/span[contains(text(), 'Платежи')]"));
+        Lib.driver.findElement(By.xpath("//div[@class='ui-menu-primary__item']/a/span[contains(text(), 'Платежи')]")).click();
+        Lib.waitElement(By.xpath("//div[@class='ui-search-input__input-wrapper']/input"));
+    }
+//_____________________________________________________________________________________
+    @Test
+    public void iпоискПровайдера() throws Exception {
+        System.out.println("Поиск провайдера");
+        Lib.driver.findElement(By.xpath("//div[@class='ui-search-input__input-wrapper']/input")).clear();
+        Lib.driver.findElement(By.xpath("//div[@class='ui-search-input__input-wrapper']/input")).sendKeys(искомыйПровайдер);
+        Lib.waitElement(By.xpath("//div[@class='ui-search-flat__box']"));
+   }
+//_____________________________________________________________________________________
+    @Test
+    public void jпроверкаПровайдераВсписке() throws Exception {
+        System.out.println("Проверка, что икомый провайдер первый в списке");
+        assertEquals(искомыйПровайдер, Lib.driver.findElement(By.xpath("//div[@class='ui-search-flat__title-box']")).getText());
+    }
+//_____________________________________________________________________________________
+    @Test
+    public void kпереходПоСсылкеПровайдера() throws Exception {
+        System.out.println("Выбор искомого провайдера");
+        Lib.driver.findElement(By.xpath("//div[@class='ui-search-flat__title-box']")).click();
+        Lib.waitElement(By.xpath("//span[@class='ui-link__text' and contains (text(), 'Платежи')]"));
+        System.out.println("Проверка открытия страницы, что и на шаге 5");
+        assertEquals(urlШаг5, Lib.driver.getCurrentUrl());
+    }
+//_____________________________________________________________________________________
     @AfterClass
         public static void finishTest() throws Exception {
         Lib.logout();
