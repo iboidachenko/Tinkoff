@@ -3,16 +3,14 @@ package com.tinkoff;
 import lib.Lib;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-
 import java.io.FileInputStream;
 import java.util.Properties;
-
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 /**
  * Created by iboidachenko on 21.04.17.
@@ -28,7 +26,8 @@ public class OneTest {
     //Путь к файлу с параметрами
     private static String pathToProperties = "src\\main\\resources\\Properties.properties";
     //Параметры
-    private static String регион;
+    private static String регионМосква;
+    private static String регионПитер;
     private static String искомыйПровайдер;
     private static String urlШаг5;
 
@@ -51,7 +50,8 @@ public class OneTest {
        Properties scriptProperties = new Properties();
        //Обращение к файлу и получение данных
        scriptProperties.load(new FileInputStream(pathToProperties));
-       регион = scriptProperties.getProperty("region");
+       регионМосква = scriptProperties.getProperty("regionM");
+       регионПитер = scriptProperties.getProperty("regionP");
     }
 //______________________________________________________________________________________
     @Test
@@ -88,12 +88,12 @@ public class OneTest {
             Lib.driver.findElement(By.xpath("//span[@class='ui-link payment-page__title_inner']")).click();
             Lib.waitElement(By.xpath("//div[@class='ui-input__column']/input[@class='ui-input__field']"));
             Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@class='ui-input__field']")).click();
-            System.out.println("Заполнить поле \"Поиск\" значением \""+регион+"\"");
+            System.out.println("Заполнить поле \"Поиск\" значением \""+регионМосква+"\"");
             Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@class='ui-input__field']")).clear();
-            Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@class='ui-input__field']")).sendKeys(регион);
+            Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@class='ui-input__field']")).sendKeys(регионМосква);
             System.out.println("Выбрать найденное значение");
-            Lib.waitElement(By.xpath(String.format("//div[@class='ui-regions__item']/span[@class='ui-link ui-link_active' and contains (text(), '%s')]",регион)));
-            Lib.driver.findElement(By.xpath(String.format("//div[@class='ui-regions__item']/span[@class='ui-link ui-link_active' and contains (text(), '%s')]",регион))).click();
+            Lib.waitElement(By.xpath(String.format("//div[@class='ui-regions__item']/span[@class='ui-link ui-link_active' and contains (text(), '%s')]",регионМосква)));
+            Lib.driver.findElement(By.xpath(String.format("//div[@class='ui-regions__item']/span[@class='ui-link ui-link_active' and contains (text(), '%s')]",регионМосква))).click();
             Lib.waitElement(By.xpath("//ul[@class='ui-menu ui-menu_icons']"));
         }
     }
@@ -206,6 +206,41 @@ public class OneTest {
         System.out.println("Проверка открытия страницы, что и на шаге 5");
         assertEquals(urlШаг5, Lib.driver.getCurrentUrl());
     }
+//_____________________________________________________________________________________
+    @Test
+    public void lпереходПлатежиКоммунальныеПлатежи() throws Exception {
+        System.out.println("Перейти на вкладку \"Платеж\"");
+        Lib.waitElement(By.xpath("//div[@class='ui-menu-primary__item']/a/span[contains(text(), 'Платежи')]"));
+        Lib.driver.findElement(By.xpath("//div[@class='ui-menu-primary__item']/a/span[contains(text(), 'Платежи')]")).click();
+        Lib.waitElement(By.xpath("//div[@class='ui-search-input__input-wrapper']/input"));
+
+        System.out.println("Нажатие на \"Коммунальные платежи\"");
+        Lib.waitElement(By.xpath("//span[@class='ui-link__text' and contains (text(), 'Коммунальные платежи')]"));
+        Lib.driver.findElement(By.xpath("//span[@class='ui-link__text' and contains (text(), 'Коммунальные платежи')]")).click();
+        Lib.waitElement(By.xpath("//div[@class='payment-page__header']/h1[contains (text(), 'Коммунальные платежи')]"));
+}
+//_____________________________________________________________________________________
+    @Test
+    public void mвыбратьРегион() throws Exception {
+        System.out.println("Выбрать регион \"г. Санкт-Петербург\"");
+        Lib.waitElement(By.xpath("//span[@class='ui-link payment-page__title_inner']"));
+        Lib.driver.findElement(By.xpath("//span[@class='ui-link payment-page__title_inner']")).click();
+        Lib.waitElement(By.xpath("//div[@class='ui-input__column']/input[@class='ui-input__field']"));
+        Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@class='ui-input__field']")).click();
+        System.out.println("Заполнить поле \"Поиск\" значением \""+регионПитер+"\"");
+        Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@class='ui-input__field']")).clear();
+        Lib.driver.findElement(By.xpath("//div[@class='ui-input__column']/input[@class='ui-input__field']")).sendKeys(регионПитер);
+        System.out.println("Выбрать найденное значение");
+        Lib.waitElement(By.xpath(String.format("//div[@class='ui-regions__item']/span[@class='ui-link' and contains (text(), '%s')]",регионПитер)));
+        Lib.driver.findElement(By.xpath(String.format("//div[@class='ui-regions__item']/span[@class='ui-link' and contains (text(), '%s')]",регионПитер))).click();
+        Lib.waitElement(By.xpath("//ul[@class='ui-menu ui-menu_icons']"));
+}
+//_____________________________________________________________________________________
+    @Test
+    public void nпроверкаСпискаПровайдеров() throws Exception {
+        System.out.println("Проверить, что в списке провайдеров не отображается искомый провайдер");
+        assertFalse(Lib.driver.findElement(By.xpath("//ul[@class='ui-menu ui-menu_icons']")).getText().contains(искомыйПровайдер));
+}
 //_____________________________________________________________________________________
     @AfterClass
         public static void finishTest() throws Exception {
